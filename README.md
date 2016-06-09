@@ -18,22 +18,24 @@ Install-Package bluesoftapi-cosmos.net
 ```
 
 ###### Use
-+ Create a instance of `CosmosClient` class passing your Token
++ Import `Bluesoft.Cosmos` namespace
+```c#
+  using Bluesoft.Cosmos;
+```
++ Create a instance of `CosmosClient` class passing your Token and endpoint
 
 ```c#
-//TODO : This code is not ready yet. Coming soon
   string myToken = "....";
-  CosmosClient cosmosClient = new CosmosClient(myToken);
-  
-  string barcode = "....";
-  var result =  cosmosClient.RetrieveByGTINAsyng(barcode).Wait();
-  if (result.Sucess)
-  {
-    foreach (var product in result.Products){
-      Console.WriteLine(product.Description);
-    }
-    
-  }
-  
-  
+  CosmosClient client = new CosmosClient(CosmosEndpoint.BR, myToken);
 ```
++ Call a API operation
+```c#
+  string gtinBarCode = "....";
+  var productTask = client.GetProductByBarCodeAsync(gtinBarCode);
+  
+  var product = productTask.Result;
+
+  Console.WriteLine(product.Description);
+  Console.WriteLine(product.Price);
+```
+
