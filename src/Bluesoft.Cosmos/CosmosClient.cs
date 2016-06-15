@@ -19,6 +19,7 @@ namespace Bluesoft.Cosmos
 
 
         internal const string OperationPathGTINS = "gtins/";
+        internal const string OperationPathGPCS = "gpcs/";
 
 
         /// <summary>
@@ -65,6 +66,7 @@ namespace Bluesoft.Cosmos
         }
         /// <summary>
         /// Retrieves product details via the GTIN / EAN informed.
+        /// https://cosmos.bluesoft.io/api/gtins/{code}
         /// </summary>
         /// <param name="gtinOrEan">Barcode in GTIN / EAN format</param>
         /// <returns>Async task with the Product</returns>
@@ -86,5 +88,28 @@ namespace Bluesoft.Cosmos
         }
 
 
+        /// <summary>
+        /// Retrieve GPC details and products linked to it, through the informed code.
+        /// https://cosmos.bluesoft.io/api/gpcs/{code}
+        /// </summary>
+        /// <param name="gpc">GPC code</param>
+        /// <param name="pageNumber">Page of products list</param>
+        /// <returns>
+        /// Retrieve GPC details and products linked to it, through the informed code.
+        /// </returns>
+        public async Task<GPC> GetProductsByGlobalProductClassificationAsync(string gpc, int pageNumber)
+        {
+            var streamTask = HttpClient.GetStreamAsync(Endpoint.Url + OperationPathGPCS + gpc + "?page=" + pageNumber);
+
+            //var str = await HttpClient.GetStringAsync(Endpoint.Url + OperationPathGPCS + gpc + "?page=" + pageNumber);
+
+            var stream = await streamTask;
+
+            Serializer = new DataContractJsonSerializer(typeof(GPC));
+
+            var globalProductClassification = (GPC)Serializer.ReadObject(stream);
+
+            return globalProductClassification;
+        }
     }
 }

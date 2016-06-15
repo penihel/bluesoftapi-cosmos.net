@@ -7,7 +7,7 @@ namespace Bluesoft.Cosmos.Models
     /// <see cref="http://cosmos.bluesoft.com.br/tabelas/definicao-ncm"/>
     /// </summary>
     [DataContract]
-    public class NomenclaturaComumMercosul
+    public class ProductNCM
     {
         /// <summary>
         /// The NCM Code

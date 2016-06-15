@@ -9,6 +9,11 @@ namespace Bluesoft.Cosmos.ConsoleTest
         {
             CosmosClient client = new CosmosClient(CosmosEndpoint.BR, "rgDjJMCMx9-IjX-2eAhaXg");
 
+            var gpcTask = client.GetProductsByGlobalProductClassificationAsync("10000000", 1);
+
+            var gpc = gpcTask.Result;
+            Console.WriteLine(gpc.Description);
+
 
             var productTask = client.GetProductByBarCodeAsync("7891910000197");
 
@@ -16,6 +21,9 @@ namespace Bluesoft.Cosmos.ConsoleTest
 
             Console.WriteLine(product.Description);
             Console.WriteLine(product.Price);
+
+            Console.ReadLine();
+
         }
     }
 }

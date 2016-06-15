@@ -6,7 +6,7 @@ namespace Bluesoft.Cosmos.Models
     /// Global Product Classification (GPC)
     /// </summary>
     [DataContract]
-    public class GlobalProductClassification
+    public class ProductGPC
     {
         /// <summary>
         /// The GPC Code

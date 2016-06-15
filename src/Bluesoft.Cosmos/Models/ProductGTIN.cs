@@ -7,7 +7,7 @@ namespace Bluesoft.Cosmos.Models
     /// <see cref="http://www.gs1.org/gtin"/>
     /// </summary>
     [DataContract]
-    public class GlobalTradeItemNumber
+    public class ProductGTIN
     {
         /// <summary>
         /// The gtin Code

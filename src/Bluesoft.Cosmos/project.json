@@ -1,4 +1,5 @@
 ﻿{
+  "title": "bluesoftapi-cosmos.net",
   "buildOptions": {
     "xmlDoc": true
   },
@@ -14,18 +15,30 @@
     },
     "net46": {
       "frameworkAssemblies": {
+        "System.Xml": "4.0.0.0",
         "System.Net.Http": "4.0.0",
         "System.Runtime.Serialization": "4.0.0.0"
       },
       "dependencies": {
-        
+
+        "System.Runtime.Serialization.Json": "4.0.0"
+      }
+
+    },
+    "net45": {
+      "frameworkAssemblies": {
+        "System.Xml": "4.0.0.0",
+        "System.Net.Http": "4.0.0",
+        "System.Runtime.Serialization": "4.0.0.0"
+      },
+      "dependencies": {
+
         "System.Runtime.Serialization.Json": "4.0.0"
       }
     }
   },
-  "version": "0.0.2",
+  "version": "0.0.3",
   "name": "bluesoftapi-cosmos.net",
-  "title ": "A client to API http://cosmos.bluesoft.com.br/api implementated in C#",
   "authors ": "penihel",
 
   "packOptions": {

@@ -96,21 +96,21 @@ namespace Bluesoft.Cosmos.Models
         ///  Global Product Classification (GPC)
         /// </summary>
         [DataMember(Name = "gpc")]
-        public GlobalProductClassification GPC { get; set; }
+        public ProductGPC GPC { get; set; }
 
 
         /// <summary>
         ///  Nomenclatura Comum do MERCOSUL - NCM
         /// </summary>
         [DataMember(Name = "ncm")]
-        public NomenclaturaComumMercosul NCM { get; set; }
+        public ProductNCM NCM { get; set; }
 
 
         /// <summary>
         ///  GTINs list
         /// </summary>
         [DataMember(Name = "gtins")]
-        public List<GlobalTradeItemNumber> GTINs { get; set; }
+        public List<ProductGTIN> GTINs { get; set; }
 
 
 
