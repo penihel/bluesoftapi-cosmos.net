@@ -72,7 +72,7 @@ namespace Bluesoft.Cosmos
         {
             var streamTask = HttpClient.GetStreamAsync(Endpoint.Url + OperationPathGTINS + gtinOrEan);
 
-            var str = await HttpClient.GetStringAsync(Endpoint.Url + OperationPathGTINS + gtinOrEan);
+            //var str = await HttpClient.GetStringAsync(Endpoint.Url + OperationPathGTINS + gtinOrEan);
 
             var stream = await streamTask;
 

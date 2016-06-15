@@ -11,6 +11,23 @@
     "netstandard1.5": {
       "imports": "dnxcore50"
     }
+    //"net46": {}
   },
-  "version": "1.0.0-*"
+  "version": "0.0.1",
+  "name": "bluesoftapi-cosmos.net",
+  "title ": "A client to API http://cosmos.bluesoft.com.br/api implementated in C#",
+  "authors ": "penihel",
+  "owners": [ "penihel" ],
+
+  "packOptions": {
+    "summary": "A client to API http://cosmos.bluesoft.com.br/api implementated in C#",
+    "licenseUrl": "https://raw.githubusercontent.com/penihel/bluesoftapi-cosmos.net/master/LICENSE",
+    "owners": [ "penihel" ],
+    "tags": [ "cosmos", "gtin", "barcode", "ean" ]
+  },
+  "scripts": {
+    "postcompile": [
+      "dotnet pack --no-build --configuration %compile:Configuration%"
+    ]
+  }
 }
