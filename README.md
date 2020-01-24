@@ -31,9 +31,9 @@ Install-Package bluesoftapi-cosmos.net
 + Call a API operation
 ```c#
   string gtinBarCode = "....";
-  var productTask = client.GetProductByBarCodeAsync(gtinBarCode);
+  var product = await client.GetProductByBarCodeAsync(gtinBarCode);
   
-  var product = productTask.Result;
+  
 
   Console.WriteLine(product.Description);
   Console.WriteLine(product.Price);
